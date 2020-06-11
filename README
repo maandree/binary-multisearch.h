@@ -1,0 +1,24 @@
+Binary multisearch
+
+Description:
+	Given a sorted list of unique items, find their in another
+	list sorted list their position or if missing where they
+	ought to be inserted. Both list must allow random access.
+
+Complexity:
+	n = number of elements in target list
+	m = number of element to locate
+
+	Time complexity: O(S(n) + m)
+		S = time complexity function of underlaying search algorithm,
+			e.g. S(n) = O(log n) in average case for binary search given O(1) comparison.
+
+	Auxiliary space complexity:
+		List return version:	O(m)
+		Online version:     	O(log m)
+
+Notes:
+	In online version, positions for elements are returned in
+	arbitrary (deterministic) order, rather than sequential.
+
+I wrote this algorithm back in Feburary 2013.
