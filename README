@@ -1,8 +1,8 @@
 Binary multisearch
 
 Description:
-	Given a sorted list of unique items, find their in another
-	list sorted list their position or if missing where they
+	Given a sorted list of unique items, find in another
+	sorted list their position or if missing where they
 	ought to be inserted. Both list must allow random access.
 
 Complexity:
