@@ -3,10 +3,15 @@
 CONFIGFILE = config.mk
 include $(CONFIGFILE)
 
-all: test
 
-test: test.c binary-multisearch.h
-	$(CC) -o $@ test.c $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+all: test
+test.o: binary-multisearch.h
+
+.c.o:
+	$(CC) -c -o $@ $< $(CFLAGS) $(CPPFLAGS)
+
+.o:
+	$(CC) -o $@ $< $(LDFLAGS)
 
 check: test
 	./test
@@ -19,6 +24,9 @@ uninstall:
 	-rm -f -- "$(DESTDIR)$(PREFIX)/include/binary-multisearch.h"
 
 clean:
-	-rm -f -- *.o test
+	-rm -f -- *.o *.su test
+
+.SUFFIXES:
+.SUFFIXES: .o .c
 
 .PHONY: all check install uninstall clean
